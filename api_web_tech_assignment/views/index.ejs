@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API_WEB_TECH</title>
+    <style>
+        .app{
+            width: 400px;
+            margin: auto;
+            text-align: center;
+        }
+        h1{
+            background-color: yellow;
+        }
+        thead{
+            background-color: lightblue;
+        }
+        table,th,td{
+            border: 1px solid black;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="inventory">
+            <h1>Inventory</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <td>inventory_id</td>
+                        <td>inventory_type</td>
+                        <td>item_name</td>
+                        <td>Available_quantity</td>
+                    </tr>
+                </thead>
+                <% inventory.forEach(function(inventory){ %>
+                    <tr>
+                        <td><%= inventory.inventory_id%></td>
+                        <td><%= inventory.inventory_type%></td>
+                        <td><%= inventory.item_name%></td>
+                        <td><%= inventory.available_quantity%></td>
+                    </tr>
+                <%}); %>
+            </table>
+        </div>
+        <div class="customer">
+            <h1>Customer</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Customer Name</td>
+                        <td>Customer Id</td>
+                        <td>email</td>
+                    </tr>
+                </thead>
+                <% customer.forEach(function(inventory){ %>
+                    <tr>
+                        <td><%= inventory.customer_name%></td>
+                        <td><%= inventory.customer_id%></td>
+                        <td><%= inventory.email%></td>
+                    </tr>
+                <%}); %>
+            </table>
+        </div>
+        <div class="order">
+            <h1>Order Table</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <td>customer_id</td>
+                        <td>inventory_id</td>
+                        <td>item_name</td>
+                        <td>quantity</td>
+                    </tr>
+                </thead>
+                <% order.forEach(function(inventory){ %>
+                    <tr>
+                        <td><%= inventory.customer_id%></td>
+                        <td><%= inventory.inventory_id%></td>
+                        <td><%= inventory.item_name%></td>
+                        <td><%= inventory.quantity%></td>
+                    </tr>
+                <%}); %>
+            </table>
+        </div>
+    </div>
+    
+
+</body>
+</html>
